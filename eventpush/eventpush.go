@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"time"
 )
@@ -24,14 +23,15 @@ type Events struct {
 
 // EventFrame ...
 type EventFrame struct {
-	EventLogTime         time.Time              `json:"event_time_stamp"`
+	EventLogTime         time.Time              `json:"event_time_stamp" binding:"required"`
 	AppName              string                 `json:"app_name"   binding:"required"`
 	AppVersion           string                 `json:"app_version" binding:"required"`
-	EventType            string                 `json:"event_type"`
-	Event                string                 `json:"event"`
-	EventID              string                 `json:"event_id"`
+	RequestID            string                 `json:"request_id" binding:"required"`
+	EventType            string                 `json:"event_type" binding:"required"`
+	Event                string                 `json:"event" binding:"required"`
+	EventID              string                 `json:"event_id" binding:"required"`
 	EventMessage         string                 `json:"event_message"`
-	User                 string                 `json:"user" binding:"required"`
+	User                 string                 `json:"user"`
 	AdditionalAttributes map[string]interface{} `json:"additional_attributes"`
 }
 
@@ -43,8 +43,13 @@ func ConnectToTrace(t Trace) *Trace {
 
 //PushEventToTrace pushes events to trace
 func PushEventToTrace(events *Events) error {
+	var eventObj Events
 	jsonInput, err := json.Marshal(events)
 	if err != nil {
+		return err
+	}
+
+	if err = json.Unmarshal(jsonInput, &eventObj); err != nil {
 		return err
 	}
 
@@ -59,4 +64,6 @@ func PushEventToTrace(events *Events) error {
 	if err != nil {
 		return err
 	}
+
+	return nil
 }
