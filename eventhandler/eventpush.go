@@ -1,4 +1,4 @@
-package eventpush
+package eventhandler
 
 import (
 	"bytes"

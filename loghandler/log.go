@@ -1,8 +1,9 @@
-package log
+package loghandler
 
 import (
-	"github.com/sirupsen/logrus"
 	"os"
+
+	"github.com/sirupsen/logrus"
 )
 
 type logging struct {
