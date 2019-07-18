@@ -13,6 +13,7 @@ type errorStructure struct {
 	Status        bool   `json:"status"`
 }
 
+//Error ...
 var Error map[int]errorStructure
 
 // ReadErrorsFromFile : read all errors from json file to Error map
