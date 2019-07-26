@@ -61,7 +61,8 @@ const (
 	ErrorDefineRole                     = 3038
 	ErrorGetUserAccessControlList       = 3039
 	ErrorPermissionDenied               = 3040
-	ErrorParsingTime 					= 3041
+	ErrorParsingTime                    = 3041
+	ErrorInvalidInputData               = 3042
 )
 
 const (
