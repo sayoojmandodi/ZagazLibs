@@ -58,11 +58,15 @@ const (
 	ErrorUserKeysResponse               = 3032
 	ErrorReadRecord                     = 3036
 	ErrorUpdateRecord                   = 3037
-	ErrorDefineRole                     = 3038
-	ErrorGetUserAccessControlList       = 3039
-	ErrorPermissionDenied               = 3040
-	ErrorParsingTime                    = 3041
-	ErrorInvalidInputData               = 3042
+	ErrorSetDataIntoQueue               = 3038
+	ErrorVerifyApp                      = 3039
+	ErrorGetDataFromQueue               = 3040
+	ErrorInvalidInputData               = 3041
+	ErrorAuthorizeApp                   = 3042
+	ErrorDefineRole                     = 3043
+	ErrorGetUserAccessControlList       = 3044
+	ErrorPermissionDenied               = 3045
+	ErrorDecodeString                   = 3046
 )
 
 const (
@@ -135,4 +139,6 @@ const (
 	SuccessCreatePayLoad                 = 5050
 	SuccessGenerateAccessControls        = 5051
 	SuccessGetAccessControlStructure     = 5052
+	SuccessAuthorizeApp                  = 5053
+	SuccessVerifyApp                     = 5054
 )
