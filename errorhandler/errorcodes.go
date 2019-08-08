@@ -69,6 +69,7 @@ const (
 	ErrorDecodeString                   = 3046
 	ErrorOTPResendCountExceeded         = 3047
 	ErrorIsGenerateOTP                  = 3048
+	ErrorDataExistInQueue               = 3049
 )
 
 const (
