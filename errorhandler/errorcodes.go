@@ -67,6 +67,9 @@ const (
 	ErrorGetUserAccessControlList       = 3044
 	ErrorPermissionDenied               = 3045
 	ErrorDecodeString                   = 3046
+	ErrorOTPResendCountExceeded         = 3047
+	ErrorIsGenerateOTP                  = 3048
+	ErrorDataExistInQueue               = 3049
 )
 
 const (
@@ -141,4 +144,5 @@ const (
 	SuccessGetAccessControlStructure     = 5052
 	SuccessAuthorizeApp                  = 5053
 	SuccessVerifyApp                     = 5054
+	SuccessIsGenerateOTP                 = 5055
 )
